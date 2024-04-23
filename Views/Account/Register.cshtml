@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model RegisterVM
+<h1> Sign up</h1>
+<form asp-action="Register" asp-controller="Account" method="post">
+    <div class="form-group">
+        <label asp-for="firstName"></label>
+        <input asp-for="firstName" class="form-control" />
+        <span asp-validation-for="firstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="lastName"></label>
+        <input asp-for="lastName" class="form-control" />
+        <span asp-validation-for="lastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ConfirmPassword"></label>
+        <input asp-for="ConfirmPassword" class="form-control" />
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary" id="register">Sign Up</button>
+</form>

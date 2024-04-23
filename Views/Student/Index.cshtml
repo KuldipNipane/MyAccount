@@ -1,0 +1,53 @@
+﻿
+
+<h2>Students List</h2>
+
+<a class="btn btn-primary" href="/Student/ManageStudent/0">Create new student</a>
+<br />
+
+
+<div class="table-responsive">
+    <table class="table table-bordered table-sm table-striped">
+        <thead class="border-top">
+            <tr>
+                <th>
+
+                    Student Name
+                </th>
+                <th>
+                    Photo
+                </th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (ViewData["lstStudents"] == null)
+            {
+                <tr><td colspan="7" class="text-center">No Model Data</td></tr>
+            }
+            else
+            {
+
+                @foreach (var p in (IEnumerable<StudentProfile>)ViewData["lstStudents"])
+                {
+                    <tr>
+
+                        <td>@p.Name</td>
+                        <td>
+                            <img src="@Url.Content("~/Upload/" + p.ProfilePic)" style="width: 8pc; height: 6pc;" />
+                        </td>
+                        <td>
+                            <a asp-action="ManageStudent" asp-route-id="@p.Id">Update</a> 
+                            <form asp-action="Delete" method="get" asp-route-id="@p.Id">
+                                <button>Delete</button>
+                            </form>
+                        </td>
+                       
+                    </tr>
+                }
+            }
+        </tbody>
+
+
+    </table>
+</div>

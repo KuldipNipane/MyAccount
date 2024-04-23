@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@* @model RegisterVM *@
+@model designVM
+
+@* <h1> Login </h1>
+<form asp-action="Login" asp-controller="Account" method="get">
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <button asp-action="index" asp-controller="Home" type="submit" class="btn btn-primary">Login</button>
+</form> *@
+
+<form asp-controller="Account" asp-action="dk" method="get" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="eventName">Event Name:</label>
+        <input type="text" class="form-control" id="eventName" name="EventName" />
+    </div>
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" class="form-control" id="title" name="Title" />
+    </div>
+    <div class="form-group">
+        <label for="fileName">File Name:</label>
+        <input type="text" class="form-control" id="fileName" name="FileName" />
+    </div>
+    <div class="form-group">
+        <label for="eventType">Type:</label>
+        <select class="form-control" id="eventType" name="EventType">
+            <option value="Holiday Snap">Holiday Snap</option>
+            <option value="Weekend Meetup">Weekend Meetup</option>
+            <option value="Occasion Picture">Occasion Picture</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea class="form-control" id="description" name="Description"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="fileUpload">Upload Document:</label>
+        <input type="file" class="form-control-file" id="fileUpload" name="FileUpload" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a asp-controller="Home" asp-action="Login" class="btn btn-secondary">Cancel</a>
+</form>
+
